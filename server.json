@@ -1,0 +1,33 @@
+{
+  "name": "uk-farm-planning-mcp",
+  "display_name": "UK Farm Planning MCP",
+  "description": "UK farm business planning data: crop rotation guidance, gross margins, agricultural tax rules, APR for IHT, tenancy law (AHA 1986 vs ATA 1995), diversification permitted development, break-even calculations.",
+  "version": "0.1.0",
+  "jurisdiction": ["GB"],
+  "tools_count": 11,
+  "transport": {
+    "stdio": {
+      "command": "npx",
+      "args": ["-y", "@ansvar/uk-farm-planning-mcp"]
+    },
+    "http": {
+      "url": "https://mcp.ansvar.eu/uk-farm-planning/mcp"
+    }
+  },
+  "docker": {
+    "image": "ghcr.io/ansvar-systems/uk-farm-planning-mcp:latest",
+    "port": 3000
+  },
+  "data_sources": [
+    "AHDB Farmbench / Pocketbook",
+    "HMRC Manuals and Guidance",
+    "Agricultural Holdings Act 1986",
+    "Agricultural Tenancies Act 1995",
+    "Town and Country Planning (GPDO) 2015"
+  ],
+  "links": {
+    "homepage": "https://ansvar.eu/open-agriculture",
+    "repository": "https://github.com/Ansvar-Systems/uk-farm-planning-mcp",
+    "npm": "https://www.npmjs.com/package/@ansvar/uk-farm-planning-mcp"
+  }
+}

@@ -1,0 +1,13 @@
+{
+  "mcp_name": "UK Farm Planning MCP",
+  "jurisdiction": "GB",
+  "build_date": "2026-04-03",
+  "rotation_guidance": 20,
+  "gross_margins": 15,
+  "tax_rules": 8,
+  "apr_guidance": 10,
+  "tenancy_rules": 10,
+  "diversification": 6,
+  "fts_entries": 31,
+  "source_hash": "initial-seed"
+}

@@ -1,0 +1,80 @@
+schema_version: "1.0"
+mcp_name: "UK Farm Planning MCP"
+category: "domain_intelligence"
+
+sources:
+  - name: "AHDB Farmbench / Pocketbook"
+    authority: "Agriculture and Horticulture Development Board"
+    official_url: "https://ahdb.org.uk/farmbench"
+    api_url: null
+    retrieval_method: "MANUAL_EXTRACT"
+    format: "PDF/HTML"
+    authentication: "none"
+    update_frequency: "annual"
+    license:
+      type: "Open Government Licence"
+      url: "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      summary: "Free to copy, publish, distribute, and adapt with attribution"
+    coverage:
+      scope: "Gross margins for arable and livestock enterprises, benchmarking quartiles"
+      version: "2024/25 estimates"
+      item_count: "~13 enterprise types"
+    languages:
+      - "en"
+
+  - name: "HMRC Manuals and Guidance"
+    authority: "HM Revenue & Customs"
+    official_url: "https://www.gov.uk/hmrc-internal-manuals"
+    api_url: null
+    retrieval_method: "MANUAL_EXTRACT"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "ongoing"
+    license:
+      type: "Open Government Licence"
+      url: "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      summary: "Free to copy, publish, distribute, and adapt with attribution"
+    coverage:
+      scope: "Agricultural tax rules, APR guidance, MTD, capital allowances, farmers averaging"
+      version: "current as of April 2026"
+      item_count: "~18 rules/scenarios"
+    languages:
+      - "en"
+
+  - name: "UK Legislation (AHA 1986 / ATA 1995)"
+    authority: "The National Archives"
+    official_url: "https://www.legislation.gov.uk"
+    api_url: null
+    retrieval_method: "MANUAL_EXTRACT"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "as_amended"
+    license:
+      type: "Open Government Licence"
+      url: "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      summary: "Free to copy, publish, distribute, and adapt with attribution"
+    coverage:
+      scope: "Agricultural tenancy rules, succession, rent review, compensation, termination"
+      version: "current as amended"
+      item_count: "~10 tenancy rule entries"
+    languages:
+      - "en"
+
+  - name: "Town and Country Planning (GPDO) 2015"
+    authority: "Ministry of Housing, Communities and Local Government"
+    official_url: "https://www.legislation.gov.uk/uksi/2015/596"
+    api_url: null
+    retrieval_method: "MANUAL_EXTRACT"
+    format: "HTML"
+    authentication: "none"
+    update_frequency: "as_amended"
+    license:
+      type: "Open Government Licence"
+      url: "https://www.nationalarchives.gov.uk/doc/open-government-licence/version/3/"
+      summary: "Free to copy, publish, distribute, and adapt with attribution"
+    coverage:
+      scope: "Permitted development rights for agricultural diversification (Class Q, R, S)"
+      version: "current as amended"
+      item_count: "~6 diversification activities"
+    languages:
+      - "en"
