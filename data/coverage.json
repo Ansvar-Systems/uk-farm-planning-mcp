@@ -3,11 +3,11 @@
   "jurisdiction": "GB",
   "build_date": "2026-04-03",
   "rotation_guidance": 29,
-  "gross_margins": 25,
+  "gross_margins": 49,
   "tax_rules": 13,
   "apr_guidance": 15,
   "tenancy_rules": 15,
   "diversification": 10,
-  "fts_entries": 48,
+  "fts_entries": 58,
   "source_hash": "computed-at-build"
 }

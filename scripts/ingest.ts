@@ -96,7 +96,7 @@ const margins: [string, string, number, number, number, string, number, number, 
   ['Linseed', '2024/25', 800, 380, 420, 'per_ha', 550, 250, 'AHDB Farmbench 2024/25'],
   ['Maize (silage)', '2024/25', 1400, 700, 700, 'per_ha', 900, 450, 'AHDB Pocketbook 2024/25'],
 
-  // ── New gross margin enterprises ──────────────────────────────────────
+  // ── New gross margin enterprises (2024/25) ────────────────────────────
   ['Spring oats', '2024/25', 950, 420, 530, 'per_ha', 700, 300, 'AHDB Farmbench 2024/25'],
   ['Upland suckler cow', '2024/25', 800, 400, 400, 'per_head', 600, 150, 'AHDB Pocketbook 2024/25'],
   ['Pig finishing', '2024/25', 110, 95, 15, 'per_pig', 30, -10, 'AHDB Pocketbook 2024/25'],
@@ -107,6 +107,36 @@ const margins: [string, string, number, number, number, string, number, number, 
   ['Asparagus', '2024/25', 12000, 5000, 7000, 'per_ha', 9000, 4000, 'AHDB Horticulture 2024/25'],
   ['Peas (combining)', '2024/25', 850, 380, 470, 'per_ha', 600, 280, 'AHDB Farmbench 2024/25'],
   ['Hemp (fibre)', '2024/25', 900, 450, 450, 'per_ha', 600, 250, 'Industry estimates 2024/25'],
+
+  // ── Additional arable enterprises (2024/25) ──────────────────────────
+  ['Triticale', '2024/25', 950, 450, 500, 'per_ha', 680, 280, 'AHDB Farmbench 2024/25'],
+  ['Winter rye', '2024/25', 900, 420, 480, 'per_ha', 650, 250, 'AHDB Farmbench 2024/25'],
+  ['Oilseed rape (spring)', '2024/25', 1000, 500, 500, 'per_ha', 700, 250, 'AHDB Farmbench 2024/25'],
+  ['Maize (forage)', '2024/25', 1800, 900, 900, 'per_ha', 1200, 500, 'AHDB Pocketbook 2024/25'],
+  ['Herbage/grass seed', '2024/25', 1800, 700, 1100, 'per_ha', 1400, 600, 'AHDB Farmbench 2024/25'],
+  ['Energy crops (miscanthus, established)', '2024/25', 400, 100, 300, 'per_ha', 450, 150, 'Industry estimates 2024/25'],
+  ['Hops', '2024/25', 8000, 5000, 3000, 'per_ha', 4500, 1000, 'AHDB Farmbench 2024/25'],
+  ['Vining peas', '2024/25', 1100, 500, 600, 'per_ha', 800, 350, 'AHDB Farmbench 2024/25'],
+
+  // ── Additional livestock enterprises (2024/25) ───────────────────────
+  ['Dairy followers', '2024/25', 200, 150, 50, 'per_head', 100, -20, 'AHDB Pocketbook 2024/25'],
+  ['Organic dairy cow', '2024/25', 3200, 2100, 1100, 'per_head', 1500, 600, 'AHDB Pocketbook 2024/25'],
+  ['Organic beef finisher', '2024/25', 1800, 1300, 500, 'per_head', 750, 150, 'AHDB Pocketbook 2024/25'],
+  ['Organic lowland ewe', '2024/25', 170, 75, 95, 'per_head', 140, 40, 'AHDB Pocketbook 2024/25'],
+  ['Turkey (per 100)', '2024/25', 3500, 2800, 700, 'per_100_birds', 1000, 300, 'Industry estimates 2024/25'],
+  ['Duck (per 100)', '2024/25', 2000, 1500, 500, 'per_100_birds', 750, 200, 'Industry estimates 2024/25'],
+
+  // ── 2023/24 historical data (top 10 enterprises for trend analysis) ──
+  ['Winter wheat', '2023/24', 1450, 620, 830, 'per_ha', 1050, 550, 'AHDB Farmbench 2023/24'],
+  ['Winter barley', '2023/24', 1180, 560, 620, 'per_ha', 800, 400, 'AHDB Farmbench 2023/24'],
+  ['Spring barley', '2023/24', 1050, 480, 570, 'per_ha', 750, 350, 'AHDB Farmbench 2023/24'],
+  ['Oilseed rape', '2023/24', 1100, 530, 570, 'per_ha', 800, 300, 'AHDB Farmbench 2023/24'],
+  ['Dairy cow', '2023/24', 2650, 1800, 850, 'per_head', 1200, 350, 'AHDB Pocketbook 2023/24'],
+  ['Beef finisher', '2023/24', 1500, 1150, 350, 'per_head', 550, 50, 'AHDB Pocketbook 2023/24'],
+  ['Lowland ewe', '2023/24', 135, 60, 75, 'per_head', 110, 25, 'AHDB Pocketbook 2023/24'],
+  ['Potatoes (maincrop)', '2023/24', 5000, 3100, 1900, 'per_ha', 3200, 600, 'AHDB Farmbench 2023/24'],
+  ['Sugar beet', '2023/24', 2100, 880, 1220, 'per_ha', 1500, 850, 'AHDB Farmbench 2023/24'],
+  ['Broilers (per 1000)', '2023/24', 9200, 8000, 1200, 'per_1000_birds', 1700, 500, 'AHDB Pocketbook 2023/24'],
 ];
 
 for (const [ent, year, output, vc, gm, unit, top, bottom, source] of margins) {
@@ -254,6 +284,19 @@ const ftsEntries: [string, string, string][] = [
   ['Spring oats pig finishing sow gross margins', 'Spring oats GM £530/ha. Pig finishing GM £15/pig (tight margins, top £30, bottom -£10). Sow breeding herd GM £400/sow/yr. Milk 10ppl GM per litre.', 'margins'],
   ['Strawberries asparagus horticulture gross margins', 'Strawberries GM £15,000/ha (output £40,000, VC £25,000). Asparagus GM £7,000/ha (output £12,000, VC £5,000). High returns but high capital and labour costs.', 'margins'],
   ['Upland suckler goats dairy gross margins', 'Upland suckler cow GM £400/head (output £800, VC £400). Goats dairy GM £250/head (output £600, VC £350). Niche enterprises.', 'margins'],
+  // New arable enterprises
+  ['Triticale winter rye minor cereal gross margins', 'Triticale GM £500/ha (output £950, VC £450). Winter rye GM £480/ha (output £900, VC £420). Lower input costs than wheat but lower output. Suit lighter soils and organic systems.', 'margins'],
+  ['Spring oilseed rape forage maize gross margins', 'Spring OSR GM £500/ha (output £1,000, VC £500). Forage maize GM £900/ha (output £1,800, VC £900). Spring OSR avoids cabbage stem flea beetle autumn pressure.', 'margins'],
+  ['Herbage grass seed energy crops gross margins', 'Herbage/grass seed GM £1,100/ha (output £1,800, VC £700). Energy crops (miscanthus, established) GM £300/ha (output £400, VC £100). Low-input perennial once established.', 'margins'],
+  ['Hops vining peas specialist arable gross margins', 'Hops GM £3,000/ha (output £8,000, VC £5,000) — high capital, specialist infrastructure. Vining peas GM £600/ha (output £1,100, VC £500). Contracted to processors.', 'margins'],
+  // New livestock enterprises
+  ['Dairy followers organic dairy gross margins', 'Dairy followers GM £50/head (output £200, VC £150) — replacement heifers, cost centre. Organic dairy cow GM £1,100/head (output £3,200, VC £2,100) — premium milk price offsets higher feed costs.', 'margins'],
+  ['Organic beef organic ewe gross margins', 'Organic beef finisher GM £500/head (output £1,800, VC £1,300). Organic lowland ewe GM £95/head (output £170, VC £75). Organic premium typically 15-25% above conventional.', 'margins'],
+  ['Turkey duck poultry gross margins', 'Turkey (per 100) GM £700 (output £3,500, VC £2,800). Duck (per 100) GM £500 (output £2,000, VC £1,500). Seasonal demand peaks at Christmas for turkey.', 'margins'],
+  // 2023/24 historical trend data
+  ['Winter wheat year-on-year trend 2023 2024', 'Winter wheat 2023/24: GM £830/ha (output £1,450, VC £620). 2024/25: GM £880/ha. Year-on-year improvement of £50/ha driven by higher output prices.', 'margins'],
+  ['Dairy cow beef finisher year-on-year trend', 'Dairy cow 2023/24: GM £850/head. 2024/25: GM £900/head (+£50). Beef finisher 2023/24: GM £350/head. 2024/25: GM £400/head (+£50). Improving livestock margins.', 'margins'],
+  ['Potatoes sugar beet broiler year-on-year trend', 'Potatoes 2023/24: GM £1,900/ha. 2024/25: GM £2,300/ha (+£400). Sugar beet 2023/24: GM £1,220/ha. 2024/25: GM £1,300/ha (+£80). Broilers 2023/24: GM £1,200/1000. 2024/25: GM £1,300/1000.', 'margins'],
   // Tax
   ['Making Tax Digital MTD income tax', 'MTD for Income Tax mandatory from April 2026 for income over £50,000. Quarterly updates via compatible software. Threshold drops to £30,000 from April 2027.', 'tax'],
   ['Farmers averaging profits 2 or 5 years', 'Farmers can average profits over 2 or 5 years. Claim within first anniversary of filing deadline. Smooths volatile farming income for income tax.', 'tax'],
