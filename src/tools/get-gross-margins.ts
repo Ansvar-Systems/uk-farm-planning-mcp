@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -53,5 +54,12 @@ export function handleGetGrossMargins(db: Database, args: GrossMarginArgs) {
       source: r.source,
     })),
     _meta: buildMeta({ source_url: 'https://ahdb.org.uk/farmbench' }),
+    _citation: buildCitation(
+      `UK Gross Margins: ${args.enterprise}`,
+      `Gross margin benchmarks for ${args.enterprise} (${jv.jurisdiction})`,
+      'get_gross_margins',
+      { enterprise: args.enterprise, ...(args.year ? { year: args.year } : {}) },
+      'https://ahdb.org.uk/farmbench',
+    ),
   };
 }
