@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -56,5 +57,12 @@ export function handleGetTenancyRules(db: Database, args: TenancyArgs) {
       act_section: r.act_section,
     })),
     _meta: buildMeta({ source_url: 'https://www.legislation.gov.uk' }),
+    _citation: buildCitation(
+      `UK Tenancy: ${args.tenancy_type ?? 'all types'}`,
+      `Farm tenancy rules (${jv.jurisdiction})`,
+      'get_tenancy_rules',
+      { ...(args.tenancy_type ? { tenancy_type: args.tenancy_type } : {}), ...(args.topic ? { topic: args.topic } : {}) },
+      'https://www.legislation.gov.uk',
+    ),
   };
 }

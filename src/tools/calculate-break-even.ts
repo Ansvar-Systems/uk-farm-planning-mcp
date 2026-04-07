@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -68,5 +69,12 @@ export function handleCalculateBreakEven(db: Database, args: BreakEvenArgs) {
       profitable: margin > 0,
     },
     _meta: buildMeta({ source_url: 'https://ahdb.org.uk/farmbench' }),
+    _citation: buildCitation(
+      `UK Break-Even: ${gm.enterprise}`,
+      `Break-even analysis for ${gm.enterprise} (${jv.jurisdiction})`,
+      'calculate_break_even',
+      { enterprise: args.enterprise },
+      'https://ahdb.org.uk/farmbench',
+    ),
   };
 }

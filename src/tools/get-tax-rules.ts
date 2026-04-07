@@ -1,4 +1,5 @@
 import { buildMeta } from '../metadata.js';
+import { buildCitation } from '../citation.js';
 import { validateJurisdiction } from '../jurisdiction.js';
 import type { Database } from '../db.js';
 
@@ -41,5 +42,12 @@ export function handleGetTaxRules(db: Database, args: TaxRulesArgs) {
       hmrc_ref: r.hmrc_ref,
     })),
     _meta: buildMeta({ source_url: 'https://www.gov.uk/hmrc-internal-manuals' }),
+    _citation: buildCitation(
+      `UK Farm Tax: ${args.topic}`,
+      `Farm tax rules for ${args.topic} (${jv.jurisdiction})`,
+      'get_tax_rules',
+      { topic: args.topic },
+      'https://www.gov.uk/hmrc-internal-manuals',
+    ),
   };
 }
